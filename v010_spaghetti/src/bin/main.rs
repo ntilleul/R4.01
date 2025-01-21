@@ -24,8 +24,17 @@ async fn main(){
 
 	    match input_option {
 	    	None => commands(),
-	    	Some(input) => println!("{input}"),
-	    }
-
+	    	Some(input) => {
+	    		let first_word = input.split_whitespace().next();
+                match first_word {
+                    Some(word) => {
+                    	if word != "voter" && word != "votants" && word != "scores"{
+                    		println!("Commande inconnue !\n");
+                    	}
+                    },
+                    None => println!("Erreur\n"),
+                };
+	    	},
+	    };
     }
 }
