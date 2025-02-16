@@ -84,6 +84,8 @@ pub async fn run_app(configuration: Configuration) -> anyhow::Result<()> {
                             for (candidat, score) in &candidats {
                                 println!("{candidat} : {score}")
                             }
+                        } else if word == "q" {
+                            break;
                         } else {
                             println!("Commande inconnue\n");
                         }
